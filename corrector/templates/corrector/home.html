@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoCorrector</title>
+</head>
+<body>
+    <h2>Enter Text to Auto-Correct:</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <textarea name="text" rows="5" cols="60">{{ input }}</textarea><br><br>
+        <button type="submit">Correct</button>
+    </form>
+
+    {% if corrected %}
+        <h3>Corrected Text:</h3>
+        <p>{{ corrected }}</p>
+    {% endif %}
+</body>
+</html>
